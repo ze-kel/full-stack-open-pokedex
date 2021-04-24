@@ -17,7 +17,7 @@ jobs:
       - name: skipcheck
         env:
           COMMITS: ${{ contains(join(toJson(github.event.commits)), 'skip') }}
-        if: $COMMITS
+        if: ${{$COMMITS}}
         run: echo "CONTAINS SKIP"
       - name: commit messages
         env:
