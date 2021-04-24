@@ -16,5 +16,5 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - name: skipcheck
         env:
-          COMMITS: ${{ toJson(github.event.commits.*.message) }}
+          COMMITS: ${{ join(toJson(github.event.commits.*.message)) }}
         run: echo "$COMMITS"
